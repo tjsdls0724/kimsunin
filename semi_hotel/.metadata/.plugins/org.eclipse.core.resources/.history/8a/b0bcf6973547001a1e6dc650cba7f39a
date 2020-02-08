@@ -1,2 +1,0 @@
-selectList=SELECT * FROM HOTEL
-searchLocationGroupFirst=SELECT * FROM HOTEL WHERE LOCATION=?

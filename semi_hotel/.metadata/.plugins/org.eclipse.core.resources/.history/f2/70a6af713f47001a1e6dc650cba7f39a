@@ -1,5 +1,0 @@
-selectList=SELECT * FROM HOTEL
-searchLocationGroupFirst=SELECT * FROM HOTEL WHERE LOCATION=?
-searchLocationGroupSecond=SELECT * FROM HOTEL WHERE LOCATION=?
-searchLocationGroupThird=SELECT * FROM HOTEL WHERE LOCATION=?
-searchLocationGroupFourth=SELECT * FROM HOTEL WHERE LOCATION=?

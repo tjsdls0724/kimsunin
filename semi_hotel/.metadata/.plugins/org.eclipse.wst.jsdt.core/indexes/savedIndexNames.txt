@@ -1,9 +1,0 @@
-INDEX VERSION 1.4+C:\Users\±Ëº±¿Œ\Desktop\semi_hotel\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-88553772.index
-435090379.index
-653497081.index
-261624650.index
-1023173983.index
-1715960059.index
-1639606865.index
-3636398808.index

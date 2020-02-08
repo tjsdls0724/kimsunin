@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="com.kh.petner.hotel.model.vo.Hotel"/>
-<fullyQualifiedTypeName name="com.kh.petner.hotel.model.service.HotelService"/>
-<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="java.io.PrintWriter"/>
-</qualifiedTypeNameHistroy>
