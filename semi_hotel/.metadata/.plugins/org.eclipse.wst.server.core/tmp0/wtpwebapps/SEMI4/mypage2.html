@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+
+<head>
+    <!-- Mobile Specific Meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/small_logo.jpg">
+    <!-- Author Meta -->
+    <meta name="author" content="colorlib">
+    <!-- Meta Description -->
+    <meta name="description" content="">
+    <!-- Meta Keyword -->
+    <meta name="keywords" content="">
+    <!-- meta character set -->
+    <meta charset="UTF-8">
+    <!-- Site Title -->
+    <title>Petner+</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
+    <!--
+			CSS
+			============================================= -->
+    <link rel="stylesheet" href="css/linearicons.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightgallery/1.6.11/css/lightgallery.min.css">
+    <link rel="stylesheet" href="css/nice-select.css">
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/owl.carousel.css">
+    <link rel="stylesheet" href="css/main_hyon.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+    <script src="js/vendor/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="js/vendor/bootstrap.min.js"></script>
+    <script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhOdIF3Y9382fqJYt5I_sswSrEw5eihAA"></script>
+    <script src="js/easing.min.js"></script>
+    <script src="js/hoverIntent.js"></script>
+    <script src="js/superfish.min.js"></script>
+    <script src="js/jquery.ajaxchimp.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.nice-select.min.js"></script>
+    <script src="js/jquery.lightbox.js"></script>
+    <script src="js/mail-script.js"></script>
+    <script src="js/main.js"></script>
+
+
+</head>
+
+<body>
+    <!--################ Start Header Area ########-->
+    <header id="header" id="home">
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-sm-6 col-4 no-padding">
+						<div class="header-top-left"  style="border-right: none;">
+							<a href="">
+								<i class="fa fa-phone"></i>
+								02-777-7777
+							</a>
+						</div>
+					</div>
+                    <div class="col-lg-6 col-sm-6 col-8 header-top-right no-padding">
+                      
+                        <ul style="border-right: none;">
+							<li>
+								<a href="login.html">&nbsp;&nbsp;&nbsp;Login</a> | <a style="padding-left:10px;" href="register.html"> Join</a>
+							</li>
+						</ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="container main-menu">
+            <div class="row align-items-center justify-content-between d-flex">
+                <div id="logo">
+                    <a href="index.html"><img style="width: 100px;" src="img/petner_logo.jpg" alt="" title="" /></a>
+                </div>
+                <nav id="nav-menu-container">
+					<ul class="nav-menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">ABOUT</a></li>
+						<li><a href="Hotel-home.html">HOTEL</a></li>
+						<li><a href="Hospital-home.html">HOSPITAL</a>
+						</li>
+						<li><a href="Beauty-home.html">BEAUTY</a></li>
+						<li class="menu-has-children"><a href="notice.html">NOTICE</a>
+							<ul>
+								<li><a href="notice.html">NOTICE</a></li>
+								<li><a href="petner_faq.html">FAQ</a></li>
+								<li><a href="qna.html">Q&A</a></li>
+							</ul>
+						</li>
+					</ul>
+				</nav>
+                <!--######## #nav-menu-container -->
+            </div>
+        </div>
+    </header>
+    <!--######## End Header Area ########-->
+
+
+    <!--tap-->
+    <script>
+
+        $(function () {
+
+            $(".tab_content").hide();
+            $(".tab_content:first").show();
+
+            $("ul.tabs li").click(function () {
+                $("ul.tabs li").removeClass("active").css("color", "#333");
+                //$(this).addClass("active").css({"color": "darkred","font-weight": "bolder"});
+                $(this).addClass("active").css("color", "green");
+                $(".tab_content").hide()
+                var activeTab = $(this).attr("rel");
+                $("#" + activeTab).fadeIn()
+            });
+        });
+
+    </script>
+    <!--tap end-->
+
+
+    <!-- Start Align Area -->
+    <section class="whole-wrap">
+        <div class="container">
+
+          
+
+
+ <!--start tab area-->
+    <div id="t_container">
+        <ul class="tabs">
+            <li class="active" rel="tab1">내 정보 관리</li>
+            <li rel="tab2">호텔 예약 조회</li>
+            <li rel="tab3">1:1 문의 내역</li>
+        </ul>
+        <div class="tab_container">
+            <div id="tab1" class="tab_content"><br>
+            
+                <div class="map_text">
+                    
+                    <div class="progress-table-wrap" style="text-align: center;">
+                        <form action="#">
+                            <div class="mt-10">
+                                <input type="text" name="user_Id" placeholder="회원 이메일(고정)" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'user_id'" required class="single-input" disabled
+                                    style="background: lightgray;">
+                            </div>
+                            <div class="mt-10">
+                                <input type="text" name="user_name" placeholder="User Name" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'user_name'" required class="single-input">
+                            </div>
+                            <div class="mt-10">
+                                <input type="password" name="password" placeholder="password" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'password'" required class="single-input">
+                            </div>
+                            <div class="mt-10">
+                                <input type="password" name="new_password" placeholder="new_password" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'new_password'" required class="single-input">
+                            </div>
+                            <div class="mt-10">
+                                <input type="password" name="new_password_confirm" placeholder="new_password_confirm" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'new_password_confirm'" required class="single-input">
+                            </div>
+                            <div class="mt-10">
+                                <input type="email" name="EMAIL" placeholder="Email address" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Email address'" required class="single-input">
+                            </div>
+                            <div class="mt-10">
+                                <input type="text" name="address" placeholder="Address" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Address'" required class="single-input">
+                            </div>
+
+                            <div class="mt-10">
+                                <input type="text" name="first_name" placeholder="이제 나머지는" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Accent color'" required class="single-input-accent">
+                            </div>
+                            <div class="mt-10">
+                                <input type="text" name="first_name" placeholder="뭐 필요한거 나중에 추가할 것!" onfocus="this.placeholder = ''"
+                                    onblur="this.placeholder = 'Secondary color'" required class="single-input-secondary">
+                            </div>
+                            <br>
+                            <a href="#" style="background: lightgray;" class="genric-btn success">수정완료</a>
+                            <a href="#" style="background: lightgray;" class="genric-btn danger">취소</a>
+                        </form>
+                    </div>
+
+
+
+                </div>
+
+            </div>
+            <!-- #tab1 -->
+            <div id="tab2" class="tab_content">
+                <p class="text1">예약 관리 </p>
+                
+                <!--######## End post-content Area ########-->
+            </div>
+            <!-- #tab2 -->
+
+            <div id="tab3" class="tab_content">
+                <p class="text1">1:1 문의</p>
+                
+            </div>
+            <!-- #tab3 -->
+        </div>
+        <!-- .tab_container -->
+    </div>
+    <!-- #container -->
+</div>
+
+
+
+
+
+
+
+    <!--######## start footer Area ########-->
+    <footer class="footer-area section-gap">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3  col-md-6">
+                    <div class="single-footer-widget">
+                        <h6>Top Products</h6>
+                        <ul class="footer-nav">
+                            <li><a href="#">Managed Website</a></li>
+                            <li><a href="#">Manage Reputation</a></li>
+                            <li><a href="#">Power Tools</a></li>
+                            <li><a href="#">Marketing Service</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="single-footer-widget newsletter">
+                        <h6>Newsletter</h6>
+                        <p>You can trust us. we only send promo offers, not a single spam.</p>
+                        <div id="mc_embed_signup">
+                            <form target="_blank" novalidate="true"
+                                action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01"
+                                method="get" class="form-inline">
+
+                                <div class="form-group row" style="width: 100%">
+                                    <div class="col-lg-8 col-md-12">
+                                        <input name="EMAIL" placeholder="Your Email Address"
+                                            onfocus="this.placeholder = ''"
+                                            onblur="this.placeholder = 'Your Email Address'" required="" type="email">
+                                        <div style="position: absolute; left: -5000px;">
+                                            <input name="b_36c4fd991d266f23781ded980_aefe40901a" tabindex="-1" value=""
+                                                type="text">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-12">
+                                        <button class="nw-btn primary-btn">Subscribe<span
+                                                class="lnr lnr-arrow-right"></span></button>
+                                    </div>
+                                </div>
+                                <div class="info"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3  col-md-12">
+                    <div class="single-footer-widget mail-chimp">
+                        <h6 class="mb-20">Instragram Feed</h6>
+                        <ul class="instafeed d-flex flex-wrap">
+                            <li><img src="img/i1.jpg" alt=""></li>
+                            <li><img src="img/i2.jpg" alt=""></li>
+                            <li><img src="img/i3.jpg" alt=""></li>
+                            <li><img src="img/i4.jpg" alt=""></li>
+                            <li><img src="img/i5.jpg" alt=""></li>
+                            <li><img src="img/i6.jpg" alt=""></li>
+                            <li><img src="img/i7.jpg" alt=""></li>
+                            <li><img src="img/i8.jpg" alt=""></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom d-flex justify-content-between align-items-center flex-wrap">
+                <p class="col-lg-8 col-sm-12 footer-text m-0">
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                    Copyright &copy;
+                    <script>document.write(new Date().getFullYear());</script> All rights reserved | This template is
+                    made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com"
+                        target="_blank">Colorlib</a>
+                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                </p>
+                <div class="footer-social d-flex align-items-center">
+                    <a href="#"><i class="fa fa-facebook"></i></a>
+                    <a href="#"><i class="fa fa-twitter"></i></a>
+                    <a href="#"><i class="fa fa-dribbble"></i></a>
+                    <a href="#"><i class="fa fa-behance"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--######## End footer Area ########-->
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

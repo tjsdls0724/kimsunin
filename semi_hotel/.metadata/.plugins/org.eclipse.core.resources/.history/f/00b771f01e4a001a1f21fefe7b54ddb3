@@ -1,0 +1,15 @@
+package com.kh.petner.hotel.model.vo;
+
+import java.io.Serializable;
+
+public class Hotelist implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -5823808892279058163L;
+	
+	Hotel_num = hotel_num;
+	Hotel_name = hotel_name;
+	Hotel_location = hotel_location;
+}

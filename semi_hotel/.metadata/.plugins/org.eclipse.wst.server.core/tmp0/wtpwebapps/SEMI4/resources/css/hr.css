@@ -1,0 +1,59 @@
+/* QNA */
+.qna-banner-area {
+  background: url(/PETNER/resources/img/board/qna_home.jpg) no-repeat bottom fixed !important;
+  background-size: cover;
+  min-height:420px;
+ }
+  .qna-banner-area .banner-content h1 {
+    font-size: 48px;
+    line-height: 54px !important;
+    margin: 0; }
+    @media (max-width: 768px) {
+      .qna-banner-area .banner-content h1 {
+        font-size: 35px;
+        line-height: 40px !important; } }
+    @media (max-width: 414px) {
+      .qna-banner-area .banner-content h1 {
+        font-size: 30px; } }
+  .qna-banner-area .banner-content p {
+    font-size: 16px;
+    margin: 40px 20px; }
+    @media (max-width: 768px) {
+      .qna-banner-area .banner-content p {
+        margin: 10px; } }
+  .qna-banner-area .banner-content .primary-btn {
+    background: #fff;
+    color: #222222; }
+    .qna-banner-area .banner-content .primary-btn:hover {
+      background: #3face4;
+      color: #ffffff; }
+
+/* notice */
+.notice-banner-area {
+  background: url(/PETNER/resources/img/board/notice-home3.jpg) no-repeat center fixed !important;
+  background-size: cover;
+  min-height:420px;
+ }
+  .notice-banner-area .banner-content h1 {
+    font-size: 48px;
+    line-height: 54px !important;
+    margin: 0; }
+    @media (max-width: 768px) {
+      .notice-banner-area .banner-content h1 {
+        font-size: 35px;
+        line-height: 40px !important; } }
+    @media (max-width: 414px) {
+      .notice-banner-area .banner-content h1 {
+        font-size: 30px; } }
+  .notice-banner-area .banner-content p {
+    font-size: 16px;
+    margin: 40px 20px; }
+    @media (max-width: 768px) {
+      .notice-banner-area .banner-content p {
+        margin: 10px; } }
+  .notice-banner-area .banner-content .primary-btn {
+    background: #fff;
+    color: #222222; }
+    .notice-banner-area .banner-content .primary-btn:hover {
+      background: #3face4;
+      color: #ffffff; }

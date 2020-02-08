@@ -1,0 +1,3 @@
+selectList=SELECT * FROM HOTEL
+searchLocationGroupFirst=SELECT * FROM HOTEL WHERE HOTEL_LOCATION=?
+searchHotelName=SELECT * FROM HOTEL WHERE HOTEL_NAME LIKE '%?%'

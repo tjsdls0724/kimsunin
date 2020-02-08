@@ -1,0 +1,16 @@
+# SQL
+selectMember=SELECT * FROM PETNER_USER \
+					WHERE USER_EMAIL=? AND USER_PASSWORD=?
+					
+insertMember=INSERT INTO PETNER_USER VALUES(?,?,?,?,DEFAULT)
+
+updateMember=UPDATE MEMBER SET \
+						PASSWORD=? \
+						, EMAIL=? \
+						, AGE=? \
+						, PHONE=? \
+						, ADDRESS=? \
+						, HOBBY=? \
+						WHERE USERID=?
+
+deleteMember=DELETE FROM MEMBER WHERE USERID=?

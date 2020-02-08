@@ -1,0 +1,37 @@
+package com.kh.petner.hotel.model.service;
+
+import java.sql.Connection;
+import java.util.ArrayList;
+
+import com.kh.petner.hotel.model.dao.HotelDao;
+import com.kh.petner.hotel.model.vo.Hotel;
+import static com.kh.petner.common.JDBCTemplate.*;
+
+public class HotelService {
+
+	private HotelDao hDao = new HotelDao();
+	public ArrayList<Hotel> selectList() {
+		Connection con = getConnection();
+		
+		ArrayList<Hotel> list = hDao.selectList(con);
+		
+		close(con);
+		
+		
+		return list;
+	}
+	public ArrayList<Hotel> searchHotel(String location) {
+		Connection con = getConnection();
+		ArrayList<Hotel> list = null;
+		
+		if(location.length() > 0) {
+			list = hDao.searchHotel(con,location);
+		}else {
+			list = hDao.selectList(con);
+		}
+		close(con);
+		
+		return list;
+	}
+	
+}

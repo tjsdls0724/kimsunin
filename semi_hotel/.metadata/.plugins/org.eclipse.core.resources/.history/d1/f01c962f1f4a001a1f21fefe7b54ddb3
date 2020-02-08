@@ -1,0 +1,7 @@
+package com.kh.petner.hotel.model.vo;
+
+import java.io.Serializable;
+
+public class HotelPageInfo implements Serializable{
+
+}
