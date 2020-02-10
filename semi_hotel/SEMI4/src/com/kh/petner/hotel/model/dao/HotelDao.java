@@ -193,9 +193,9 @@ public class HotelDao {
 			while(rset.next()) {
 				Hotel h = new Hotel();
 	
-				h.setHotel_num(rset.getInt(1));
-				h.setHotel_name(rset.getString(2));
-				h.setHotel_location(rset.getString(3));
+				h.setHotel_num(rset.getInt(2));
+				h.setHotel_name(rset.getString(3));
+				h.setHotel_location(rset.getString(4));
 
 				list.add(h);
 				
