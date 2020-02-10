@@ -27,7 +27,7 @@ public class HotelDao {
 			e.printStackTrace();
 		}
 	}
-//	전체 목록 조회 (페이징 처리 때문에 삭제)
+/*	전체 목록 조회 (페이징 처리 때문에 삭제)
 	public ArrayList<Hotel> selectList(Connection con) {
 		ArrayList<Hotel> list = null;
 		Statement stmt = null;
@@ -63,7 +63,7 @@ public class HotelDao {
 		}
 		
 		return list;
-	}
+	}*/
 	 
 	public ArrayList<Hotel> searchHotel(Connection con, String[] locationArr) {
 		ArrayList<Hotel> list = null;
@@ -127,9 +127,9 @@ public class HotelDao {
 			while(rset.next()) {
 				Hotel h = new Hotel();
 				
-				h.setHotel_num(rset.getInt(1));
-				h.setHotel_name(rset.getString(2));
-				h.setHotel_location(rset.getString(3));
+				h.setHotel_num(rset.getInt(2));
+				h.setHotel_name(rset.getString(3));
+				h.setHotel_location(rset.getString(4));
 				
 				list.add(h);
 				
@@ -172,4 +172,76 @@ public class HotelDao {
 		return listCount;
 	}
 
+	public ArrayList<Hotel> selectList(Connection con, int currentPage, int limit) {
+		ArrayList<Hotel> list = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		
+		String sql = prop.getProperty("selectList");
+		try {
+			pstmt = con.prepareStatement(sql);
+			int startRow = (currentPage-1)*limit + 1; // 1, 11 
+			int endRow = startRow + limit -1;
+			
+			pstmt.setInt(1, endRow);
+			pstmt.setInt(2, startRow);
+			
+			rset = pstmt.executeQuery();
+			
+			list = new ArrayList<Hotel>();
+			
+			while(rset.next()) {
+				Hotel h = new Hotel();
+	
+				h.setHotel_num(rset.getInt(1));
+				h.setHotel_name(rset.getString(2));
+				h.setHotel_location(rset.getString(3));
+
+				list.add(h);
+				
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rset);
+			close(pstmt);
+		}
+		System.out.println("sikim HotelDao list : " + list);
+		return list;
+	}
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

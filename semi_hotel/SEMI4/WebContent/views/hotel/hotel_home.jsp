@@ -4,6 +4,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <% ArrayList<Hotel> list = (ArrayList)request.getAttribute("list");
+	HotelPageInfo hpi = (HotelPageInfo)request.getAttribute("hpi");
+	int listCount = hpi.getListCount();
+	int currentPage = hpi.getCurrentPage();
+	int maxPage = hpi.getMaxPage();
+	int startPage = hpi.getStartPage();
+	int endPage = hpi.getEndPage();
 %>
     <!DOCTYPE html>
 <html>
@@ -205,29 +211,49 @@
 
 		
 				<!-- 페이징 부분 -->
-				<nav class="col-md-12 blog-pagination justify-content-center d-flex">
-					<ul class="pagination">
-						<li class="page-item">
-							<a href="#" class="page-link" aria-label="Previous">
-								<span aria-hidden="true">
-									<span class="lnr lnr-chevron-left"></span>
-								</span>
-							</a>
-						</li>
-						
-						<li class="page-item active"><a href="#" class="page-link">02</a></li>
-						<li class="page-item"><a href="#" class="page-link">03</a></li>
-						<li class="page-item"><a href="#" class="page-link">04</a></li>
-						<li class="page-item"><a href="#" class="page-link">05</a></li>
-						<li class="page-item">
-							<a href="#" class="page-link" aria-label="Next">
-								<span aria-hidden="true">
-									<span class="lnr lnr-chevron-right"></span>
-								</span>
-							</a>
-						</li>
-					</ul>
-				</nav>
+			<nav class="col-md-12 blog-pagination justify-content-center d-flex">
+               <ul class="pagination">
+                  <li class="page-item">
+                     <a href="#" class="page-link" aria-label="Previous">
+                        <span aria-hidden="true">
+                           <span class="lnr lnr-chevron-left"></span>
+                        </span>
+                     </a>
+                  </li>
+                  <li class="page-item active"><a onclick="location.href='<%= request.getContextPath() %>/hotelDbServlet?currentPage=1'" class="page-link"><<</a></li>
+                  <%  if(currentPage <= 1){  %>
+                  <li class="page-item hiddeee"><a href="#" class="page-link"><</a></li>
+                  <%  }else{ %>
+                  <li class="page-item"><a onclick="location.href='<%= request.getContextPath() %>/hotelDbServlet?currentPage=<%=currentPage - 1 %>'" class="page-link"><</a></li>
+                  <%  } %>
+                  
+                  
+                  <% for(int p = startPage; p <= endPage; p++){
+                   if(p == currentPage){    
+               %>
+                      <li class="page-item" id ="noclick"><a href="#" class="page-link"><%= p %></a></li> 
+                  <%      }else{ %> 
+                         <li class="page-item "><a onclick="location.href='<%= request.getContextPath() %>/hotelDbServlet?currentPage=<%= p %>'" class="page-link"><%= p %></a></li>
+                   <%      } %>
+               <% } %>
+         
+               <%  if(currentPage >= maxPage){  %>
+               <li class="page-item hiddeee"><a href="#" class="page-link">></a></li>
+               <%  }else{ %>
+                  <li class="page-item"><a onclick="location.href='<%= request.getContextPath() %>/hotelDbServlet?currentPage=<%=currentPage + 1 %>'" class="page-link">></a></li>
+                  <%  } %>
+                  <li class="page-item active"><a onclick="location.href='<%= request.getContextPath() %>/hotelDbServlet?currentPage=<%= maxPage %>'" class="page-link">>></a></li>
+                  <li class="page-item">
+                     <a href="#" class="page-link" aria-label="Next">
+                        <span aria-hidden="true">
+                           <span class="lnr lnr-chevron-right"></span>
+                        </span>
+                     </a>
+                  </li>
+               </ul>
+               
+               
+            </nav> 
 			</div>
 		</div>
 	</section>

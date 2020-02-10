@@ -14,6 +14,7 @@ public class HotelService {
 	public int getListCount() {
 		
 		Connection con = getConnection();
+		
 		int listCount = hDao.getListCount(con);
 	
 		close(con);
@@ -22,7 +23,7 @@ public class HotelService {
 	}
 	
 	
-//	 전체 목록 조회 (페이징 처리 때문에 삭제)
+/*	 전체 목록 조회 (페이징 처리 때문에 삭제)
 	public ArrayList<Hotel> selectList() { //강사님은 한개 선택하는 메소드 이름으로 했는데 나는 전체 선택 메소드로 만듬 
 		Connection con = getConnection();
 		
@@ -32,8 +33,8 @@ public class HotelService {
 		
 		
 		return list;
-	}
-	public ArrayList<Hotel> searchHotel(String[] locationArr) {
+	}*/
+/*	public ArrayList<Hotel> searchHotel(String[] locationArr) {
 		Connection con = getConnection();
 		ArrayList<Hotel> list = null;
 		
@@ -45,8 +46,8 @@ public class HotelService {
 		close(con);
 		
 		return list;
-	}
-	public ArrayList<Hotel> searchHotelName(String name) {
+	}*/
+/*	public ArrayList<Hotel> searchHotelName(String name) {
 		Connection con = getConnection();
 		ArrayList<Hotel> list = null;
 		
@@ -59,6 +60,15 @@ public class HotelService {
 		close(con);
 		
 		return list;
+	}*/
+	public ArrayList<Hotel> selectList(int currentPage, int limit) {
+		Connection con = getConnection();
+		ArrayList<Hotel> list = hDao.selectList(con,currentPage,limit);
+		
+		close(con);
+		
+		return list;
+		
 	}
 
 

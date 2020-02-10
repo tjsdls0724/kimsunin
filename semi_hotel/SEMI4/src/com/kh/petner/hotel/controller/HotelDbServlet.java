@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kh.petner.hotel.model.service.HotelService;
 import com.kh.petner.hotel.model.vo.Hotel;
+import com.kh.petner.hotel.model.vo.HotelPageInfo;
 
 /**
  * Servlet implementation class HotelDbServlet
@@ -37,7 +38,62 @@ public class HotelDbServlet extends HttpServlet {
 		
 		HotelService hs = new HotelService();
 		
-		list = hs.selectList(); // DB에서 검색해온 결과 값을 ArrayList담아서 온다(타입은 Hotel)
+		int startPage;
+		
+		// 한 번에 표시할 페이지들 중 가장 뒤의 페이지
+		int endPage;
+		
+		// 전체 페이지의 가장 마지막에 있는 페이지
+		int maxPage; 
+		
+		// 사용자가 위치한 현재 페이지
+		int currentPage;
+		
+		// 총 페이지 수 (한 페이지 당 보여줄 게시글의 수)
+		int limit;
+		
+		// 처음 접속 시 페이지는 1페이지 부터 시작한다 
+		currentPage = 1; 
+		
+		// 글 개수 및 페이지 수 10개로 제한하기
+		limit = 4;
+		
+		if(request.getParameter("currentPage") != null) {
+			currentPage = Integer.parseInt(request.getParameter("currentPage"));
+		}
+		int listCount = hs.getListCount();
+		
+		System.out.println("총 페이지 개수 : " + listCount);
+		
+		maxPage = (int)((double)listCount/ limit + 0.9);
+		startPage = (int)((double)currentPage/limit + 0.9-1) * limit + 1;
+		endPage = startPage + limit -1;
+		
+		if(endPage > maxPage){
+			endPage = maxPage;
+		}
+		
+		list = hs.selectList(currentPage, limit);
+		
+		String page = "";
+		
+		if(list != null) {
+			page = "views/hotel/hotel_home.jsp";
+			request.setAttribute("list", list);
+			
+			HotelPageInfo hpi = new HotelPageInfo(currentPage,listCount,limit,maxPage,startPage,endPage);
+			
+			request.setAttribute("hpi", hpi);
+			
+		}else {
+			page = "views/common/errorPage.jsp";
+			request.setAttribute("list", list);
+		}
+		
+		request.getRequestDispatcher(page).forward(request, response);
+	}
+		
+/*		list = hs.selectList(); // DB에서 검색해온 결과 값을 ArrayList담아서 온다(타입은 Hotel)
 		
 		if(list == null) System.out.println("list는 null");
 		
@@ -58,7 +114,7 @@ public class HotelDbServlet extends HttpServlet {
 		
 		request.getRequestDispatcher(page).forward(request, response);
 	}
-
+*/
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
