@@ -231,7 +231,7 @@
                   <% for(int p = startPage; p <= endPage; p++){
                    if(p == currentPage){    
                %>
-                      <li class="page-item" id ="noclick"><a href="#" class="page-link"><%= p %></a></li> 
+                      <li class="page-item" id ="noclick"><a href="#" class="page-link" style="background : pink;"><%= p %></a></li> 
                   <%      }else{ %> 
                          <li class="page-item "><a onclick="location.href='<%= request.getContextPath() %>/hotelDbServlet?currentPage=<%= p %>'" class="page-link"><%= p %></a></li>
                    <%      } %>

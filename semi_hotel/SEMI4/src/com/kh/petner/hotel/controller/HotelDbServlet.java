@@ -56,7 +56,7 @@ public class HotelDbServlet extends HttpServlet {
 		currentPage = 1; 
 		
 		// 글 개수 및 페이지 수 10개로 제한하기
-		limit = 4;
+		limit = 6;
 		
 		if(request.getParameter("currentPage") != null) {
 			currentPage = Integer.parseInt(request.getParameter("currentPage"));
