@@ -68,7 +68,8 @@ public class HotelDao {
 			
 			pstmt.setInt(1, endRow);
 			pstmt.setInt(2, startRow);
-			
+			System.out.println("Hotel Dao endRow : " + endRow);
+			System.out.println("Hotel Dao startRow : " + startRow);
 			rset = pstmt.executeQuery();
 			
 			list = new ArrayList<Hotel>();
@@ -79,6 +80,7 @@ public class HotelDao {
 				h.setHotel_num(rset.getInt(2));
 				h.setHotel_name(rset.getString(3));
 				h.setHotel_location(rset.getString(4));
+				h.setHotel_star(rset.getInt(6));
 
 				list.add(h);
 				

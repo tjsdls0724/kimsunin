@@ -193,8 +193,9 @@
 									 <%=h.getHotel_name()%> 
 								</a>
 							</h4>
-							<i class="fa fa-star star"></i><i class="fa fa-star star"></i><i class="fa fa-star star"></i><i class="fa fa-star star" star></i><i
-								class="fa fa-star star"></i>
+							<% for(int i=0; i<h.getHotel_star(); i++) { %>
+							<i class="fa fa-star star"></i>
+							<% } %>
 								<span>&nbsp&nbsp후기 132개</span>
 							<p class="card-text">
 								<br>
