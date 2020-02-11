@@ -22,6 +22,45 @@ public class HotelService {
 		return listCount;
 	}
 	
+	public ArrayList<Hotel> selectList(int currentPage, int limit) {
+		Connection con = getConnection();
+		ArrayList<Hotel> list = hDao.selectList(con,currentPage,limit);
+		
+		close(con);
+		
+		return list;
+		
+	}
+	
+	public ArrayList<Hotel> searchHotelLocation(String[] locationArr) {
+		Connection con = getConnection();
+		ArrayList<Hotel> list = null;
+		
+		if(locationArr.length > 0) {
+			list = hDao.searchHotelLocation(con,locationArr);
+		}/*else {
+			list = hDao.selectList(con);
+		}*/
+		close(con);
+		
+		return list;
+	}
+	
+	public ArrayList<Hotel> searchHotelName(String name) {
+		Connection con = getConnection();
+		ArrayList<Hotel> list = null;
+		
+		if(name.length() > 0) {
+			list = hDao.searchHotelName(con,name);
+		}/*else {
+			list = hDao.selectList(con);
+		}*/
+		
+		close(con);
+		
+		return list;
+}
+	
 	
 /*	 전체 목록 조회 (페이징 처리 때문에 삭제)
 	public ArrayList<Hotel> selectList() { //강사님은 한개 선택하는 메소드 이름으로 했는데 나는 전체 선택 메소드로 만듬 
@@ -34,42 +73,9 @@ public class HotelService {
 		
 		return list;
 	}*/
-/*	public ArrayList<Hotel> searchHotel(String[] locationArr) {
-		Connection con = getConnection();
-		ArrayList<Hotel> list = null;
-		
-		if(locationArr.length > 0) {
-			list = hDao.searchHotel(con,locationArr);
-		}else {
-			list = hDao.selectList(con);
-		}
-		close(con);
-		
-		return list;
-	}*/
-/*	public ArrayList<Hotel> searchHotelName(String name) {
-		Connection con = getConnection();
-		ArrayList<Hotel> list = null;
-		
-		if(name.length() > 0) {
-			list = hDao.searchHotelName(con,name);
-		}else {
-			list = hDao.selectList(con);
-		}
-	
-		close(con);
-		
-		return list;
-	}*/
-	public ArrayList<Hotel> selectList(int currentPage, int limit) {
-		Connection con = getConnection();
-		ArrayList<Hotel> list = hDao.selectList(con,currentPage,limit);
-		
-		close(con);
-		
-		return list;
-		
-	}
+
+
+
 
 
 

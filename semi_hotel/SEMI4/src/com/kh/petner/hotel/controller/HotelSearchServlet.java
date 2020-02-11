@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.kh.petner.hotel.model.service.HotelService;
 import com.kh.petner.hotel.model.vo.Hotel;
+import com.kh.petner.hotel.model.vo.HotelPageInfo;
 
 /**
  * Servlet implementation class HotelSearchServlet
@@ -36,6 +37,8 @@ public class HotelSearchServlet extends HttpServlet {
 		
 		String location = request.getParameter("loc");
 		String name = request.getParameter("hon");
+		System.out.println("HotelSearchSerVlet loc : " + location);
+		System.out.println("HotelSearchSerVlet hon : " + name);
 		if(location != null) {
 			
 			String[] locationArr = null;
@@ -50,19 +53,25 @@ public class HotelSearchServlet extends HttpServlet {
 			
 			HotelService hs = new HotelService();
 			
-			list = hs.searchHotel(locationArr);
+			list = hs.searchHotelLocation(locationArr);
 			
 			String page = "";
 			
 			if(list != null) {
+				System.out.println("sikim HotelSearchServlet if문");
 				page = "views/hotel/hotel_home.jsp";
 				request.setAttribute("list", list);
 				
+//				HotelPageInfo hpi = new HotelPageInfo(currentPage,listCount,limit,maxPage,startPage,endPage);
+				HotelPageInfo hpi = new HotelPageInfo(1,100,1,1,1,1);
+				request.setAttribute("hpi", hpi);
+				
 			}else {
+				System.out.println("sikim HotelSearchServlet else문");
 				page = "views/common/errorPage.jsp";
 				request.setAttribute("msg", "공지사항 목록 불러오기 에러");
 			}
-			
+			System.out.println("sikim HotelSearchServlet request");
 			request.getRequestDispatcher(page).forward(request, response);
 			
 		}else {
@@ -75,9 +84,13 @@ public class HotelSearchServlet extends HttpServlet {
 			String page = "";
 			
 			if(list != null) {
+				System.out.println("HotelSearchSerVlet SearchName if문");
 				page = "views/hotel/hotel_home.jsp";
 				request.setAttribute("list", list);
 				
+//				HotelPageInfo hpi = new HotelPageInfo(currentPage,listCount,limit,maxPage,startPage,endPage);
+				HotelPageInfo hpi = new HotelPageInfo(1,100,1,1,1,1);
+				request.setAttribute("hpi", hpi);
 			}else {
 				page = "views/common/errorPage.jsp";
 				request.setAttribute("msg", "공지사항 목록 불러오기 에러");
