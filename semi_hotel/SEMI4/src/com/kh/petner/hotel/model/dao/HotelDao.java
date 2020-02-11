@@ -119,6 +119,7 @@ public class HotelDao {
 					h.setHotel_num(rset.getInt(1));
 					h.setHotel_name(rset.getString(2));
 					h.setHotel_location(rset.getString(3));
+					h.setHotel_star(rset.getInt(5));
 					list.add(h);
 				}
 			}	
@@ -158,6 +159,7 @@ public class HotelDao {
 				h.setHotel_num(rset.getInt(1));
 				h.setHotel_name(rset.getString(2));
 				h.setHotel_location(rset.getString(3));
+				h.setHotel_star(rset.getInt(5));
 				
 				list.add(h);
 				
